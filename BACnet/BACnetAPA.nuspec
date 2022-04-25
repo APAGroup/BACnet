@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package>
+  <metadata>
+    <id>BACnetAPA</id>
+    <version>1.0.0</version>
+    <title>BACnet APA</title>
+    <authors>APA sp. z o.o.</authors>
+    <owners></owners>
+    <projectUrl>https://www.website.com/project</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Obiekty BACnet projekt Nazca</description>
+    <releaseNotes>Initial 1.0.0 release</releaseNotes>
+    <dependencies>
+      <dependency id="BACnet" version="1.0.13.0" />
+      <dependency id="SharpPcap" version="4.2.0.0" />
+      <dependency id="PacketDotNet" version="0.13.0.0" />
+    </dependencies>
+    <summary>Obiekty BACnet projekt Nazca</summary>
+  </metadata>
+  <files>
+    <file src="readme.txt" />
+    <file src="BacnetDeviceModelBase" />
+    <file src="NotifyPropertyChangedBase" />
+  </files>
+</package>
