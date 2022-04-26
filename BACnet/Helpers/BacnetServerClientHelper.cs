@@ -202,16 +202,16 @@ namespace BACnetAPA
 
 				switch (data.Client.DataType)
 				{
-					case Flavor.Bool:
+					case 0:
 						values.Add(TranslateBoolToBacnetType((BacnetApplicationTags)data.Client.PropertyDataType, (bool)data.Data.Data));
 						break;
 
-					case Flavor.Num:
+					case 1:
 
 						values.Add(GetNumericValue(data.Client.PropertyDataType, data.Data.Data));
 						break;
 
-					case Flavor.Text:
+					case 2:
 						values.Add(new BacnetValue(BacnetApplicationTags.BACNET_APPLICATION_TAG_CHARACTER_STRING, (string)data.Data.Data));
 						break;
 				}

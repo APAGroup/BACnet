@@ -77,8 +77,6 @@
     <Compile Include="Helpers\BacnetItemInfoHelper.cs" />
     <Compile Include="Enums\BacnetPropertyType.cs" />
     <Compile Include="Helpers\BacnetServerClientHelper.cs" />
-    <Compile Include="Enums\Direction.cs" />
-    <Compile Include="Enums\Flavor.cs" />
     <Compile Include="IBacnetRequest.cs" />
     <Compile Include="IBacnetServerClient.cs" />
     <Compile Include="IScanner.cs" />

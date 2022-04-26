@@ -5,6 +5,11 @@ namespace BACnetAPA
 { 
     public class BacnetItemInfo : IEquatable<BacnetItemInfo>
     {
+        public BacnetItemInfo()
+        {
+            //for serialization
+        }
+
         public BacnetItemInfo(string ipAddress, int deviceId, string modelName, string vendorName,
             string propertyIdentifier, string propertyName, int propertyInstanceId, int propertyType,
             int propertyDataType, string propertyDescription,
@@ -42,11 +47,11 @@ namespace BACnetAPA
             PropertyDataType = item.PropertyDataType;
         }
         
-        public Flavor DataType { get; set; }
+        public int DataType { get; set; }
 
         public int DeviceId { get; set; }
         
-        public Direction Direction { get; set; }
+        public int Direction { get; set; }
 
         public string Identifier => $"{IpAddress}:{DeviceId}:{PropertyIdentifier}".GetHashCode().ToString();
 

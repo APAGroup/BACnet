@@ -73,21 +73,21 @@ namespace BACnetAPA
             }
         }
 
-        public static Direction BacnetPropertyTypeToDirection(BacnetPropertyType type)
+        public static int BacnetPropertyTypeToDirection(BacnetPropertyType type)
         {
             switch (type)
             {
                 case BacnetPropertyType.ObjectAnalogInput:
                 case BacnetPropertyType.ObjectBinaryInput:
                 case BacnetPropertyType.ObjectMultiStateInput:
-                    return Direction.Output;
+                    return 1;
 
                 case BacnetPropertyType.ObjectAnalogOutput:
                 case BacnetPropertyType.ObjectBinaryOutput:
                 case BacnetPropertyType.ObjectMultiStateOutput:
                 case BacnetPropertyType.ObjectLightingOutput:
                 case BacnetPropertyType.ObjectBinaryLightingOutput:
-                    return Direction.InputOutput;
+                    return 2;
 
                 case BacnetPropertyType.ObjectAnalogValue:
                 case BacnetPropertyType.ObjectBinaryValue:
@@ -104,7 +104,7 @@ namespace BACnetAPA
                 case BacnetPropertyType.ObjectTimePatternValue:
                 case BacnetPropertyType.ObjectTimeValue:
                 case BacnetPropertyType.ObjectMultiStateValue:
-                    return Direction.InputOutput;
+                    return 2;
 
                 case BacnetPropertyType.ObjectCalendar:
                 case BacnetPropertyType.ObjectCommand:
@@ -139,21 +139,21 @@ namespace BACnetAPA
                 case BacnetPropertyType.ObjectNotificationForwarder:
                 case BacnetPropertyType.ObjectAlertEnrollment:
                 case BacnetPropertyType.ObjectChannel:
-                    return Direction.Output;
+                    return 1;
 
                 default:
-                    return Direction.Output;
+                    return 1;
             }
         }
 
-        public static Flavor BacnetPropertyTypeToFlavor(BacnetPropertyType type)
+        public static int BacnetPropertyTypeToFlavor(BacnetPropertyType type)
         {
             switch (type)
             {
                 case BacnetPropertyType.ObjectBinaryInput:
                 case BacnetPropertyType.ObjectBinaryOutput:
                 case BacnetPropertyType.ObjectBinaryValue:
-                    return Flavor.Bool;
+                    return 0;
 
                 case BacnetPropertyType.ObjectAnalogInput:
                 case BacnetPropertyType.ObjectMultiStateInput:
@@ -166,7 +166,7 @@ namespace BACnetAPA
                 case BacnetPropertyType.ObjectLargeAnalogValue:
                 case BacnetPropertyType.ObjectPositiveIntegerValue:
                 case BacnetPropertyType.ObjectMultiStateValue:
-                    return Flavor.Num;
+                    return 1;
 
                 case BacnetPropertyType.ObjectBitstringValue:
                 case BacnetPropertyType.ObjectCharacterstringValue:
@@ -210,10 +210,10 @@ namespace BACnetAPA
                 case BacnetPropertyType.ObjectNotificationForwarder:
                 case BacnetPropertyType.ObjectAlertEnrollment:
                 case BacnetPropertyType.ObjectChannel:
-                    return Flavor.Text;
+                    return 2;
 
                 default:
-                    return Flavor.Text;
+                    return 2;
             }
         }
 
